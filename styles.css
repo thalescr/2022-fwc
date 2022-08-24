@@ -60,7 +60,11 @@ body {
 }
 
 .title {
+  display: flex;
   padding: 20px;
+  margin: 0 auto;
+  max-width: 680px;
+  width: 100%;
 }
 
 .title h1 {
@@ -69,13 +73,17 @@ body {
 
 .sticker-control {
   display: flex;
-  flex-direction: column;;
+  flex-direction: column;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .country {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  width: 100%;
 }
 
 .country__top-bar {
