@@ -61,14 +61,20 @@ body {
 
 .title {
   display: flex;
+  flex-direction: column;
   padding: 20px;
   margin: 0 auto;
   max-width: 680px;
-  width: 100%;
 }
 
 .title h1 {
   font-size: 16pt;
+}
+
+.title h3 {
+  color: #ccc;
+  font-size: 13pt;
+  padding-top: 14px;
 }
 
 .sticker-control {
@@ -83,7 +89,6 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  width: 100%;
 }
 
 .country__top-bar {

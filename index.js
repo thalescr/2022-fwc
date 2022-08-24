@@ -1,24 +1,29 @@
 (() => {
   const range = (start, end) => Array.from({length: (end - start)}, (v, k) => k + start);
 
-  const countries = [
-    'QAT', 'ECU', 'SEN', 'NED',
-    'ENG', 'IRN', 'USA', 'WAL',
-    'ARG', 'KSA', 'MEX', 'POL',
-    'FRA', 'AUS', 'DEN', 'TUN',
-    'ESP', 'CRC', 'GER', 'JPN',
-    'BEL', 'CAN', 'MAR', 'CRO',
-    'BRA', 'SRB', 'SUI', 'CMR',
-    'POR', 'GHA', 'URU', 'KOR',
-    'FWC',
-  ];
+  const updateCounter = () => {
+    const counter = document.querySelector('.title h3');
+    counter.textContent = `${(localStorage.length/669).toFixed(2) * 100}% complete (${localStorage.length}/669)`;
+  };
+
+  const countries = {
+    'QAT': '🇶🇦', 'ECU': '🇪🇨', 'SEN': '🇸🇳', 'NED': '🇳🇱',
+    'ENG': '🏴󠁧󠁢󠁥󠁮󠁧󠁿', 'IRN': '🇮🇷', 'USA': '🇺🇸', 'WAL': '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
+    'ARG': '🇦🇷', 'KSA': '🇸🇦', 'MEX': '🇲🇽', 'POL': '🇵🇱',
+    'FRA': '🇫🇷', 'AUS': '🇦🇺', 'DEN': '🇩🇰', 'TUN': '🇹🇳',
+    'ESP': '🇪🇸', 'CRC': '🇨🇷', 'GER': '🇩🇪', 'JPN': '🇯🇵',
+    'BEL': '🇧🇪', 'CAN': '🇨🇦', 'MAR': '🇲🇦', 'CRO': '🇭🇷',
+    'BRA': '🇧🇷', 'SRB': '🇷🇸', 'SUI': '🇨🇭', 'CMR': '🇨🇲',
+    'POR': '🇵🇹', 'GHA': '🇬🇭', 'URU': '🇺🇾', 'KOR': '🇰🇷',
+    'FWC': '⚽',
+  };
 
   const control = document.querySelector('.sticker-control');
-  countries.forEach((country) => {
+  Object.keys(countries).forEach((country) => {
     control.insertAdjacentHTML(
       'beforeend',
       `<div id="${country}" class="country">
-        <div class="country__top-bar"><h5>${country}</h5></div>
+        <div class="country__top-bar"><h5>${country} ${countries[country]}</h5></div>
         <div class="country__stickers hidden"></div>
       </div>`
     );
@@ -57,6 +62,9 @@
         localStorage.setItem(stickerCode, 'true');
       }
       sticker.classList.toggle('active');
+      updateCounter();
     });
   });
+
+  updateCounter();
 })();
