@@ -3,7 +3,7 @@
 
   const updateCounter = () => {
     const counter = document.querySelector('.title h3');
-    counter.textContent = `${(localStorage.length/669).toFixed(2) * 100}% complete (${localStorage.length}/669)`;
+    counter.textContent = `${((localStorage.length/669) * 100).toFixed(2)}% complete (${localStorage.length}/669)`;
   };
 
   const countries = {
