@@ -29,9 +29,12 @@
     );
 
     const countryNode = document.querySelector(`#${country} .country__stickers`);
-    const maxNumber = country === 'FWC' ? 29 : 20;
+    const maxNumber = country === 'FWC' ? 30 : 20;
     range(0, maxNumber).forEach((number) => {
-      number += 1;
+      if (country !== 'FWC') {
+        number += 1;
+      }
+
       const sticker = document.createElement('span');
       const stickerCode = `${country}${number}`;
 
