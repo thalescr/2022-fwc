@@ -77,6 +77,10 @@ body {
   padding-top: 14px;
 }
 
+.display-checked-container {
+  padding-top: 14px;
+}
+
 .sticker-control {
   display: flex;
   flex-direction: column;
